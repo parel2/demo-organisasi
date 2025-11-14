@@ -3,27 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organisasi Demo Nusa - Website Profil Organisasi</title>
-    
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Wisata Nusantara - Jelajahi Keindahan Indonesia</title>
     <style>
-        :root {
-            --primary-navy: #1a365d;
-            --secondary-navy: #2d3748;
-            --accent-gold: #d69e2e;
-            --light-gray: #f7fafc;
-            --medium-gray: #e2e8f0;
-            --dark-gray: #4a5568;
-            --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -31,371 +12,202 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--dark-gray);
-            overflow-x: hidden;
+            color: #333;
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Header & Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(26, 54, 93, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            background: var(--primary-navy);
-            box-shadow: var(--shadow);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .logo i {
-            margin-right: 0.5rem;
-            color: var(--accent-gold);
-            font-size: 2rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            color: var(--accent-gold);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.7)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a90e2" width="1200" height="600"/><path fill="%23ffffff" opacity="0.1" d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            color: var(--white);
-            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
 
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            color: var(--accent-gold);
-            font-weight: 500;
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: var(--accent-gold);
-            color: var(--primary-navy);
-            padding: 1rem 2rem;
-            border-radius: 50px;
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
             text-decoration: none;
+            color: #667eea;
             font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
+            transition: color 0.3s;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            background: #b7791f;
-        }
-
-        .demo-notice {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            font-style: italic;
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 0;
+        nav ul li a:hover {
+            color: #764ba2;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 2rem 1rem;
         }
 
-        .section-title {
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
             text-align: center;
-            margin-bottom: 3rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #667eea;
         }
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary-navy);
-            margin-bottom: 1rem;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
             position: relative;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--accent-gold);
-        }
-
-        .section-title p {
-            color: var(--dark-gray);
-            font-size: 1.1rem;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--light-gray);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image i {
-            font-size: 8rem;
-            color: var(--accent-gold);
-            opacity: 0.7;
-        }
-
-        /* Vision Mission */
-        .vision-mission {
-            background: var(--white);
-        }
-
-        .vm-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .vision, .mission {
-            background: var(--light-gray);
-            padding: 2rem;
+            overflow: hidden;
             border-radius: 10px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
-        .vision h3, .mission h3 {
-            color: var(--primary-navy);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .mission-list {
-            list-style: none;
-        }
-
-        .mission-list li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-        }
-
-        .mission-list i {
-            color: var(--accent-gold);
-            margin-top: 2px;
-        }
-
-        /* Structure */
-        .structure {
-            background: var(--light-gray);
-        }
-
-        .org-chart {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .position-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .position-card:hover {
+        .gallery-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
 
-        .position-card i {
-            font-size: 3rem;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
         }
 
-        .position-card h4 {
-            color: var(--primary-navy);
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .package-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .package-header h3 {
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
-        /* Activities */
-        .activities {
-            background: var(--white);
+        .package-price {
+            font-size: 2rem;
+            font-weight: bold;
         }
 
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .activity-card {
-            background: var(--light-gray);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .activity-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .activity-image {
-            height: 200px;
-            background: var(--medium-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark-gray);
-        }
-
-        .activity-image i {
-            font-size: 3rem;
-        }
-
-        .activity-content {
+        .package-body {
             padding: 1.5rem;
         }
 
-        .activity-content h4 {
-            color: var(--primary-navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-date {
-            color: var(--accent-gold);
-            font-size: 0.9rem;
+        .package-body ul {
+            list-style: none;
             margin-bottom: 1rem;
         }
 
-        /* Contact */
-        .contact {
-            background: var(--light-gray);
+        .package-body ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
         }
 
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+        .package-body ul li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
         }
 
-        .contact-form {
-            background: var(--white);
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .booking-form {
+            background: white;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .form-group {
@@ -405,607 +217,296 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--primary-navy);
-            font-weight: 500;
+            font-weight: 600;
+            color: #555;
         }
 
         .form-group input,
+        .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: 1px solid var(--medium-gray);
+            padding: 0.8rem;
+            border: 2px solid #ddd;
             border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-            transition: border-color 0.3s ease;
+            font-size: 1rem;
+            transition: border-color 0.3s;
         }
 
         .form-group input:focus,
+        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-gold);
+            border-color: #667eea;
         }
 
-        .submit-btn {
-            background: var(--primary-navy);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border: none;
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .success-message {
+            display: none;
+            background: #4caf50;
+            color: white;
+            padding: 1rem;
             border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: var(--secondary-navy);
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--white);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-item i {
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-            width: 30px;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary-navy);
-            color: var(--white);
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer h3 {
-            color: var(--accent-gold);
             margin-bottom: 1rem;
+            text-align: center;
         }
 
-        .footer-notice {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--secondary-navy);
-            font-size: 0.9rem;
-            opacity: 0.8;
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--primary-navy);
-                flex-direction: column;
-                padding: 1rem 2rem;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-
-            .nav-menu.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .section-title h2 {
+            header h1 {
                 font-size: 2rem;
             }
 
-            .about-content,
-            .vm-content,
-            .contact-content {
-                grid-template-columns: 1fr;
+            nav ul li {
+                margin: 0.5rem 1rem;
             }
 
-            .org-chart {
-                grid-template-columns: 1fr;
-            }
-
-            .activities-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .container {
-                padding: 0 1rem;
+            .section h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <i class="fas fa-university"></i>
-                ORGANISASI DEMO NUSA
-            </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#vision">Visi Misi</a></li>
-                <li><a href="#structure">Struktur</a></li>
-                <li><a href="#activities">Kegiatan</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+    <header id="home">
+        <h1>🌴 Wisata Nusantara 🌴</h1>
+        <p>Jelajahi Keindahan Indonesia Bersama Kami</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="#packages">Paket Wisata</a></li>
+            <li><a href="#booking">Pemesanan</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>ORGANISASI DEMO NUSA</h1>
-            <p class="hero-subtitle">Bersama Kita Kuat, Bersatu Kita Hebat</p>
-            <a href="#about" class="cta-button">Lihat Selengkapnya</a>
-            <p class="demo-notice">
-                Catatan: Ini adalah website demo organisasi untuk keperluan portofolio pembuatan website.
-            </p>
-        </div>
-    </section>
+    <div class="container">
+        <section id="gallery" class="section">
+            <h2>Galeri Pemandangan</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&h=600&fit=crop" alt="Bali Beach">
+                    <div class="gallery-overlay">
+                        <h3>Pantai Bali</h3>
+                        <p>Pantai eksotis dengan sunset yang menakjubkan</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&h=600&fit=crop" alt="Raja Ampat">
+                    <div class="gallery-overlay">
+                        <h3>Raja Ampat</h3>
+                        <p>Surga bawah laut dengan terumbu karang terindah</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&h=600&fit=crop" alt="Bromo">
+                    <div class="gallery-overlay">
+                        <h3>Gunung Bromo</h3>
+                        <p>Sunrise spektakuler di atas awan</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&h=600&fit=crop" alt="Komodo">
+                    <div class="gallery-overlay">
+                        <h3>Pulau Komodo</h3>
+                        <p>Habitat komodo dan pantai pink yang menawan</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1559628376-f3fe5f782a2e?w=800&h=600&fit=crop" alt="Borobudur">
+                    <div class="gallery-overlay">
+                        <h3>Candi Borobudur</h3>
+                        <p>Candi Buddha terbesar di dunia</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558085525-da536f8f2220?w=800&h=600&fit=crop" alt="Lombok">
+                    <div class="gallery-overlay">
+                        <h3>Pantai Lombok</h3>
+                        <p>Pantai berpasir putih dengan air jernih</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Tentang Kami</h2>
-                <p>Mengenal lebih dekat Organisasi Demo Nusa</p>
-            </div>
-            <div class="about-content fade-in">
-                <div class="about-text">
-                    <p>
-                        Organisasi Demo Nusa adalah sebuah organisasi yang didirikan dengan tujuan mulia untuk 
-                        memajukan pendidikan dan pemberdayaan masyarakat Indonesia. Sejak berdiri pada tahun 2020, 
-                        kami telah berkomitmen untuk menjadi wadah bagi generasi muda dalam mengembangkan potensi 
-                        diri dan berkontribusi positif bagi bangsa.
-                    </p>
-                    <p>
-                        Dengan fokus utama pada bidang pendidikan, sosial, dan pengembangan sumber daya manusia, 
-                        kami terus berupaya menciptakan program-program inovatif yang dapat memberikan dampak 
-                        nyata bagi masyarakat luas. Melalui kolaborasi dengan berbagai pihak, kami yakin dapat 
-                        mewujudkan visi dan misi organisasi.
-                    </p>
+        <section id="packages" class="section">
+            <h2>Paket Wisata Populer</h2>
+            <div class="packages">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Paket Bali 3D2N</h3>
+                        <div class="package-price">Rp 2.500.000</div>
+                        <p>per orang</p>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li>Tiket pesawat PP</li>
+                            <li>Hotel bintang 4</li>
+                            <li>Makan 3x sehari</li>
+                            <li>Tour Tanah Lot</li>
+                            <li>Watersport Tanjung Benoa</li>
+                            <li>Guide profesional</li>
+                        </ul>
+                        <center><a href="#booking" class="btn">Pesan Sekarang</a></center>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <i class="fas fa-users"></i>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Vision Mission Section -->
-    <section id="vision" class="vision-mission">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Visi & Misi</h2>
-                <p>Landasan dan arah perjuangan organisasi kami</p>
-            </div>
-            <div class="vm-content fade-in">
-                <div class="vision">
-                    <h3><i class="fas fa-eye"></i> Visi</h3>
-                    <p>
-                        Menjadi organisasi terdepan dalam memberdayakan generasi muda Indonesia untuk 
-                        menciptakan perubahan positif dan berkelanjutan di masyarakat.
-                    </p>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Paket Bromo 2D1N</h3>
+                        <div class="package-price">Rp 1.800.000</div>
+                        <p>per orang</p>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li>Transportasi AC</li>
+                            <li>Penginapan nyaman</li>
+                            <li>Makan 3x</li>
+                            <li>Sunrise Bromo</li>
+                            <li>Savana & Pasir Berbisik</li>
+                            <li>Dokumentasi gratis</li>
+                        </ul>
+                        <center><a href="#booking" class="btn">Pesan Sekarang</a></center>
+                    </div>
                 </div>
-                <div class="mission">
-                    <h3><i class="fas fa-target"></i> Misi</h3>
-                    <ul class="mission-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            Menyelenggarakan program pendidikan dan pelatihan berkualitas tinggi
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            Memfasilitasi pengembangan keterampilan dan kreativitas anggota
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            Membangun jaringan kolaborasi yang kuat dengan berbagai stakeholder
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            Mengimplementasikan program pemberdayaan masyarakat yang berkelanjutan
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            Mewujudkan tata kelola organisasi yang transparan dan akuntabel
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Structure Section -->
-    <section id="structure" class="structure">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Struktur Organisasi</h2>
-                <p>Susunan kepengurusan Organisasi Demo Nusa</p>
-            </div>
-            <div class="org-chart fade-in">
-                <div class="position-card">
-                    <i class="fas fa-crown"></i>
-                    <h4>Ketua Umum</h4>
-                    <p>Memimpin dan mengarahkan organisasi secara keseluruhan</p>
-                </div>
-                <div class="position-card">
-                    <i class="fas fa-user-tie"></i>
-                    <h4>Wakil Ketua</h4>
-                    <p>Membantu ketua dalam menjalankan tugas kepemimpinan</p>
-                </div>
-                <div class="position-card">
-                    <i class="fas fa-clipboard-list"></i>
-                    <h4>Sekretaris</h4>
-                    <p>Mengelola administrasi dan dokumentasi organisasi</p>
-                </div>
-                <div class="position-card">
-                    <i class="fas fa-calculator"></i>
-                    <h4>Bendahara</h4>
-                    <p>Mengelola keuangan dan aset organisasi</p>
-                </div>
-                <div class="position-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h4>Divisi Pendidikan</h4>
-                    <p>Mengelola program-program pendidikan dan pelatihan</p>
-                </div>
-                <div class="position-card">
-                    <i class="fas fa-bullhorn"></i>
-                    <h4>Divisi Komunikasi</h4>
-                    <p>Mengelola komunikasi dan hubungan masyarakat</p>
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Paket Raja Ampat 5D4N</h3>
+                        <div class="package-price">Rp 8.500.000</div>
+                        <p>per orang</p>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li>Tiket pesawat PP</li>
+                            <li>Penginapan resort</li>
+                            <li>Full board meals</li>
+                            <li>Island hopping</li>
+                            <li>Snorkeling equipment</li>
+                            <li>Underwater camera</li>
+                        </ul>
+                        <center><a href="#booking" class="btn">Pesan Sekarang</a></center>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Activities Section -->
-    <section id="activities" class="activities">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Kegiatan Kami</h2>
-                <p>Berbagai program dan kegiatan yang telah kami laksanakan</p>
-            </div>
-            <div class="activities-grid fade-in">
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h4>Workshop Kepemimpinan</h4>
-                        <p class="activity-date"><i class="fas fa-calendar"></i> Januari 2024</p>
-                        <p>
-                            Pelatihan pengembangan jiwa kepemimpinan untuk anggota organisasi dengan 
-                            mengundang narasumber berpengalaman di bidangnya.
-                        </p>
-                    </div>
+        <section id="booking" class="section">
+            <h2>Formulir Pemesanan</h2>
+            <div class="booking-form">
+                <div id="successMessage" class="success-message">
+                    Terima kasih! Pemesanan Anda telah berhasil dikirim. Kami akan menghubungi Anda segera.
                 </div>
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-heart"></i>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="activity-content">
-                        <h4>Bakti Sosial</h4>
-                        <p class="activity-date"><i class="fas fa-calendar"></i> Februari 2024</p>
-                        <p>
-                            Program pemberian bantuan sosial kepada masyarakat kurang mampu dalam 
-                            bentuk sembako dan kebutuhan pokok lainnya.
-                        </p>
-                    </div>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h4>Pelatihan Digital Marketing</h4>
-                        <p class="activity-date"><i class="fas fa-calendar"></i> Maret 2024</p>
-                        <p>
-                            Workshop pengenalan digital marketing untuk UMKM dalam rangka 
-                            membantu meningkatkan penjualan di era digital.
-                        </p>
-                    </div>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-tree"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h4>Aksi Peduli Lingkungan</h4>
-                        <p class="activity-date"><i class="fas fa-calendar"></i> April 2024</p>
-                        <p>
-                            Kegiatan penanaman pohon dan pembersihan lingkungan dalam rangka 
-                            menjaga kelestarian alam dan meningkatkan kesadaran lingkungan.
-                        </p>
-                    </div>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h4>Seminar Edukasi</h4>
-                        <p class="activity-date"><i class="fas fa-calendar"></i> Mei 2024</p>
-                        <p>
-                            Seminar pendidikan tentang pentingnya literasi digital dan finansial 
-                            bagi generasi muda di era modern ini.
-                        </p>
-                    </div>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h4>Kompetisi Kreativitas</h4>
-                        <p class="activity-date"><i class="fas fa-calendar"></i> Juni 2024</p>
-                        <p>
-                            Penyelenggaraan kompetisi kreativitas untuk mahasiswa dalam berbagai 
-                            bidang seperti desain, video, dan karya tulis ilmiah.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Hubungi Kami</h2>
-                <p>Jangan ragu untuk menghubungi kami</p>
-            </div>
-            <div class="contact-content fade-in">
-                <div class="contact-form">
-                    <h3 style="color: var(--primary-navy); margin-bottom: 1.5rem;">
-                        <i class="fas fa-envelope"></i> Kirim Pesan
-                    </h3>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Kirim Pesan
-                        </button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Alamat Sekretariat</h4>
-                            <p>Jl. Contoh Demo No. 123<br>Jakarta Pusat, DKI Jakarta 10110</p>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@organisasidemonusa.org<br>admin@organisasidemonusa.org</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telepon</h4>
-                            <p>(021) 1234-5678<br>(021) 8765-4321</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-share-alt"></i>
-                        <div>
-                            <h4>Media Sosial</h4>
-                            <p>@organisasidemonusa (Facebook)<br>@orgdemonusa (Instagram)<br>@OrgDemoNusa (Twitter)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <h3><i class="fas fa-university"></i> Organisasi Demo Nusa</h3>
-            <p>&copy; 2024 Organisasi Demo Nusa. Semua hak cipta dilindungi.</p>
-            <div class="footer-notice">
-                <p>
-                    <strong>Disclaimer:</strong> Website ini adalah profil organisasi dalam bentuk demo 
-                    untuk keperluan presentasi atau portofolio jasa web desain. Semua informasi yang 
-                    tercantum dalam website ini bersifat fiktif dan hanya untuk tujuan demonstrasi.
-                </p>
+                    <div class="form-group">
+                        <label for="phone">No. Telepon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Pilih Destinasi</label>
+                        <select id="destination" name="destination" required>
+                            <option value="">-- Pilih Destinasi --</option>
+                            <option value="bali">Bali 3D2N - Rp 2.500.000</option>
+                            <option value="bromo">Bromo 2D1N - Rp 1.800.000</option>
+                            <option value="rajaampat">Raja Ampat 5D4N - Rp 8.500.000</option>
+                            <option value="komodo">Komodo Island 4D3N - Rp 6.000.000</option>
+                            <option value="lombok">Lombok 3D2N - Rp 3.200.000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Tanggal Keberangkatan</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="participants">Jumlah Peserta</label>
+                        <input type="number" id="participants" name="participants" min="1" max="50" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Pesan Tambahan (Opsional)</label>
+                        <textarea id="message" name="message" placeholder="Tuliskan permintaan khusus Anda..."></textarea>
+                    </div>
+
+                    <center><button type="submit" class="btn">Kirim Pemesanan</button></center>
+                </form>
             </div>
-        </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wisata Nusantara. Jelajahi Keindahan Indonesia.</p>
+        <p>📞 +62 812-3456-7890 | ✉️ info@wisatanusantara.com</p>
     </footer>
 
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        mobileToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            const icon = mobileToggle.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                const icon = mobileToggle.querySelector('i');
-                icon.classList.replace('fa-times', 'fa-bars');
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Contact form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Simulate form submission
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert('Terima kasih! Pesan Anda telah terkirim. Ini adalah demo form, pesan tidak benar-benar dikirim.');
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                destination: document.getElementById('destination').value,
+                date: document.getElementById('date').value,
+                participants: document.getElementById('participants').value,
+                message: document.getElementById('message').value
+            };
+
+            console.log('Booking Data:', formData);
+
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('bookingForm').reset();
+
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+
+            window.scrollTo({
+                top: document.getElementById('booking').offsetTop - 100,
+                behavior: 'smooth'
+            });
         });
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
                     window.scrollTo({
-                        top: offsetTop,
+                        top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Add hover effects to cards
-        document.querySelectorAll('.position-card, .activity-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Initialize animations on page load
-        window.addEventListener('load', function() {
-            // Add a small delay to ensure all elements are rendered
-            setTimeout(() => {
-                document.querySelectorAll('.fade-in').forEach(el => {
-                    if (el.getBoundingClientRect().top < window.innerHeight) {
-                        el.classList.add('visible');
-                    }
-                });
-            }, 100);
-        });
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
     </script>
 </body>
 </html>
